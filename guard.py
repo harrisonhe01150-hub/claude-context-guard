@@ -93,7 +93,7 @@ def handoff_reason(cwd, session_id, why):
      - 关键文件：…
    - 不动这个文件里的其他任何内容；不写任何账号、密码、key、token 的具体值；不要 git commit。
    - 改完用 Read 看一眼这一段，确认写对了（OneDrive 文件尤其要确认）。
-2. 运行 obsidian-save 存这次会话的总结（session {session_id}）。
+2. 如果有 obsidian-save 技能，运行它存这次会话的总结（session {session_id}）；没有就跳过这一步。
 3. 用一两句话告诉用户：会话太长了，请开一个新 chat；并给出一句可以直接粘贴的开场白，例如「接着做：先读 CLAUDE.md 的『最近进展』段，然后继续下一步」。"""
 
 

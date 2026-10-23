@@ -9,7 +9,7 @@
 | 时机 | hook | 行为 |
 |---|---|---|
 | 上下文第一次超过 `warn_tokens`（默认 20 万） | `UserPromptSubmit` → `guard.py prompt` | 让 Claude 在下一条回复的第一行提醒一次：「⚠️ 这个会话已经约 X 万 token，做完手上这件事建议收工开新会话。」 |
-| 已压缩 ≥ `handoff_compactions` 次（默认 2），或主会话调用 ≥ `handoff_calls` 次（默认 500） | `Stop` → `guard.py stop` | 拦一次停止，让 Claude 先交接：覆盖写工作文件夹 `CLAUDE.md` 的「## 最近进展」段（最多 15 行），跑 obsidian-save，再给你一句开新 chat 用的开场白。每个会话只拦一次。 |
+| 已压缩 ≥ `handoff_compactions` 次（默认 2），或主会话调用 ≥ `handoff_calls` 次（默认 500） | `Stop` → `guard.py stop` | 拦一次停止，让 Claude 先交接：覆盖写工作文件夹 `CLAUDE.md` 的「## 最近进展」段（最多 15 行），有 obsidian-save 技能就跑一下，再给你一句开新 chat 用的开场白。每个会话只拦一次。 |
 | 准备自动压缩时 | `PreCompact`（只匹配 `auto`）→ `guard.py precompact` | 任务没做完就先不压：任务列表开着还没收尾，或 Claude 正在调用工具。任务做完后下一次再压。上下文超过 `compact_hard_cap`（默认 60 万）照样压；手动 `/compact` 永远不拦。 |
 
 出任何错都静默退出（错误记到 `guard.log`），不会弄坏会话。
