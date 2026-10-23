@@ -57,3 +57,7 @@ python -m unittest discover -s tests -v
 - hook 不能直接执行 `/compact`，所以「每个任务后压缩」是靠调小 `autoCompactWindow` + 任务中途拦自动压缩来近似的。
 - 「任务列表开着」靠桌面 App 的 `mcp__ccd_turn__update_plan` / `mcp__ccd_turn__wrap_up` 判断；在命令行里只有「正在调用工具」这一条起作用。
 - 任务中途不压缩，意味着长任务的上下文会一直涨到 `compact_hard_cap`，会多花一些额度。
+
+## 许可证
+
+MIT，见 [LICENSE](LICENSE)。
