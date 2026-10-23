@@ -1,0 +1,7 @@
+{
+  "warn_tokens": 400000,
+  "handoff_compactions": 2,
+  "handoff_calls": 500,
+  "compact_hard_cap": 900000,
+  "overrides": {}
+}

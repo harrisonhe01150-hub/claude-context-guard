@@ -1,0 +1,5 @@
+# per-machine runtime files
+state/
+guard.log
+config.json
+__pycache__/

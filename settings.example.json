@@ -1,0 +1,42 @@
+{
+  "autoCompactWindow": 800000,
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python",
+            "args": ["C:/Users/<you>/.claude/context-guard/guard.py", "prompt"],
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python",
+            "args": ["C:/Users/<you>/.claude/context-guard/guard.py", "stop"],
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "matcher": "auto",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python",
+            "args": ["C:/Users/<you>/.claude/context-guard/guard.py", "precompact"],
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}
